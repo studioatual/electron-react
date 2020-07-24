@@ -15,16 +15,15 @@ module.exports = {
     aggregateTimeout: 500,
     ignored: ['node_modules'],
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    compress: true,
-    port: 9000,
-  },
   resolve: {
     alias: {
       '~': path.resolve(__dirname, 'src'),
     },
     extensions: ['.js', '.scss', '.json'],
+  },
+  externals: {
+    fs: 'require("fs")',
+    electron: 'require("electron")',
   },
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
@@ -32,7 +31,7 @@ module.exports = {
     path: isDevelopment
       ? path.resolve(__dirname, 'dist')
       : path.resolve(__dirname, 'public'),
-    publicPath: '/',
+    publicPath: './',
   },
   module: {
     rules: [

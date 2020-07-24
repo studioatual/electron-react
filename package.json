@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel dev electron",
     "electron": "electron .",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "dev": "cross-env NODE_ENV=development webpack",
     "build": "cross-env NODE_ENV=production webpack"
   },
   "keywords": [],
@@ -29,6 +29,7 @@
     "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
     "electron": "^9.0.5",
+    "electron-reload": "^1.5.0",
     "eslint": "^7.3.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
