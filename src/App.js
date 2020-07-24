@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 const { ipcRenderer } = require('electron');
 
 function App() {
+  const path =
+    'C:\\Program Files\\Adobe\\Adobe Photoshop CC 2015\\Photoshop.exe';
   const [statusMonitor, setStatusMonitor] = useState('');
+
   const openPhotoshop = () => {
-    const path =
-      'C:\\Program Files\\Adobe\\Adobe Photoshop CC 2015\\Photoshop.exe';
     ipcRenderer.send('open_exec', { path });
   };
+
   const monitorPhotoshop = () => {
-    const path =
-      'C:\\Program Files\\Adobe\\Adobe Photoshop CC 2015\\Photoshop.exe';
     ipcRenderer.send('monitor', { path });
   };
 
@@ -24,7 +24,7 @@ function App() {
       <button onClick={openPhotoshop}>Open Photoshop</button>
       <br />
       <br />
-      <button onClick={monitorPhotoshop}>Monitorar Photoshop</button>
+      <button onClick={monitorPhotoshop}>Photoshop Monitor</button>
       <div>{statusMonitor}</div>
     </div>
   );
